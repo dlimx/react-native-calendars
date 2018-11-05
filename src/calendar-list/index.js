@@ -59,6 +59,9 @@ class CalendarList extends Component {
   constructor(props) {
     super(props);
     this.style = styleConstructor(props.theme);
+    this.calendarWidth = props.calendarWidth;
+    this.calendarHeight = props.calendarHeight;
+    this.viewabilityConfig = props.viewabilityConfig;
 
     const rows = [];
     const texts = [];
@@ -218,10 +221,19 @@ class CalendarList extends Component {
         keyExtractor={(item, index) => String(index)}
         initialScrollIndex={this.state.openDate ? this.getMonthIndex(this.state.openDate) : false}
         getItemLayout={this.getItemLayout}
-        scrollsToTop={this.props.scrollsToTop}
+        scrollsToTop={this.props.scrollsToTop !== undefined ? this.props.scrollsToTop : false}
+        viewabilityConfig={this.viewabilityConfig}
       />
     );
   }
 }
+
+CalendarList.defaultProps = {
+  calendarHeight: 360,
+  calendarWidth: width,
+  viewabilityConfig: {
+    viewAreaCoveragePercentThreshold: 100,
+  }
+};
 
 export default CalendarList;
