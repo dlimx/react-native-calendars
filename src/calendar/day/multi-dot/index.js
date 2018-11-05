@@ -48,7 +48,7 @@ class Day extends Component {
       // Filter out dots so that we we process only those items which have key and color property
       const validDots = marking.dots.filter(d => (d && d.color));
       if (validDots.length > 3) {
-        return <View style={[baseDotStyle, { width: 16, backgroundColor: '#636363' }]} />
+        return <View style={[baseDotStyle, { width: 22, backgroundColor: '#aaa' }]} />
       }
       return validDots.map((dot, index) => {
         return (
