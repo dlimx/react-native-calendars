@@ -232,7 +232,7 @@ CalendarList.defaultProps = {
   calendarHeight: 360,
   calendarWidth: width,
   viewabilityConfig: {
-    viewAreaCoveragePercentThreshold: 100,
+    viewAreaCoveragePercentThreshold: 25,
   }
 };
 
